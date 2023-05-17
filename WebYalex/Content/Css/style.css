@@ -1,0 +1,176 @@
+﻿body {
+
+    background: url(/Content/Img/fondo.png) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100%;
+}
+.image-container {
+    float: left;
+    margin-left: 50%;
+    margin-top: -330px;
+}
+
+.login-box {
+    width: 320px;
+    height: 500px;
+    background-image: linear-gradient(90deg, #e48258 0, #e57757 16.67%, #e46a57 33.33%, #e25d58 50%, #df4f5a 66.67%, #dc415e 83.33%, #d83263 100%);
+    border-radius: 3%;
+    color: #fff;
+    top: 55%;
+    left: 40%;
+    position: center;
+    transform: translate(0%, 0%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+.login-box .avatar {
+        width: 500px;
+        height: 190px;
+        background-color: white;
+        border-radius: 50%;
+        position: fixed;
+        top: -200px;
+        left: -85px;
+}
+::placeholder {
+    color: white; /* Color del texto del marcador de posición */
+    font-family: sans-serif; /* Estilo del texto del marcador de posición */
+    opacity: 0.5;
+}
+
+.login-box h1 {
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 22px;
+}
+
+.login-box label {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        display: block;
+}
+
+    .login-box input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+        .login-box input[type="text"], .login-box input[type="password"] {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .login-box input[type="submit"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: #c13531;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+
+            .login-box input[type="submit"]:hover {
+                cursor: pointer;
+                background: #931818;
+                color: #cfcfcd;
+            }
+
+.login-box a {
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 20px;
+    color: #7f0000;
+}
+
+    .login-box a:hover {
+        color: #cfcfcd;
+    }
+
+
+.singin-box {
+    width: 320px;
+    height: 1000px;
+    background-image: linear-gradient(90deg, #e48258 0, #e57757 16.67%, #e46a57 33.33%, #e25d58 50%, #df4f5a 66.67%, #dc415e 83.33%, #d83263 100%);
+    color: #fff;
+    top: 60%;
+    left: 50%;
+    border-radius: 3%;
+    position: center;
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+    .singin-box .avatar {
+        width: 500px;
+        height: 190px;
+        /*background-color: white;*/
+        /*border-radius: 90%;*/
+        position: fixed;
+        top: -200px;
+        left: -70px;
+    }
+
+    .singin-box h1 {
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .singin-box label {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        display: block;
+    }
+
+    .singin-box input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+        .singin-box input[type="text"], .singin-box input[type="password"] {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .singin-box input[type="submit"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: #c13531;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+
+            .singin-box input[type="submit"]:hover {
+                cursor: pointer;
+                background: #931818;
+                color: #cfcfcd;
+            }
+
+    .singin-box a {
+        text-decoration: none;
+        font-size: 15px;
+        line-height: 20px;
+        color: #7f0000;
+    }
+
+        .singin-box a:hover {
+            color: #cfcfcd;
+        }

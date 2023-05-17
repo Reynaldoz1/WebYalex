@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<link rel="stylesheet" href="~/Content/Css/style.css">
+<body class="cuerpo">
+    <br />
+
+    <div class="login-box">
+        <img src="~/Content/img/YALEX-CAR-RENTA.png" class="avatar" alt="Avatar Image" />
+        <h1>Iniciar Sesión</h1>
+       
+        <form action="@Url.Action("Login","Login")" method=post>
+            <img src="~/Content/Img/YALEX-CAR-RENTAL.png" class="avatar" alt="Avatar Image" />
+            <label for="username">Usuario</label>
+            <input type="text" name="correo" placeholder="Enter Mail" required="">
+            <label for="password">Contraseña</label>
+            <input type="password" name="contrasena" placeholder="Enter Password" required="">
+
+            @if (ViewData["Mensaje"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewData["Mensaje"]
+                </div>
+
+            }
+
+            <input type="submit" value="Iniciar Sesión">
+            No tienes una cuenta?
+            <a href="@Url.Action("Registro","Login")">Registrarse</a>
+        </form>
+
+    </div>
+    <div class="image-container">
+        <img src="~/Content/Img/nissan.png" alt="Carro">
+    </div>
+    <br />
+    <br />
+</body>
+

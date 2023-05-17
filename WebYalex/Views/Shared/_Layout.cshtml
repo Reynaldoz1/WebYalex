@@ -1,0 +1,242 @@
+﻿@{
+    bool usuarioAutenticado = (bool?)Session["UsuarioAutenticado"] ?? false;
+
+    var rolUsuario = (string)Session["RolUsuario"];
+    var nombreUsuario = (string)Session["NombreUsuario"];
+
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title </title>
+    @Styles.Render("~/Content/Css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="~/Content/Img/YALEX-CAR-RENTAL.png" width="120" height="50" />
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (!usuarioAutenticado)
+                    {
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Nosotros", "About", "Home")</li>
+                        <li>@Html.ActionLink("Catalogo", "Catalogo", "Home")</li>
+                        <li>@Html.ActionLink("Turismo", "Turismo", "Home")</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    }
+                    else
+                    {
+                        if (rolUsuario.Equals("cliente", StringComparison.OrdinalIgnoreCase))
+                        {
+                            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Nosotros", "About", "Home")</li>
+                            <li>@Html.ActionLink("Catalogo", "Catalogo", "Home")</li>
+                            <li>@Html.ActionLink("Turismo", "Turismo", "Home")</li>
+                            <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+
+                        }
+                        if (rolUsuario.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="background-color: #e57057 " data-toggle="dropdown">Reservas<span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color: #e57057 ">
+                                    <li>@Html.ActionLink("Registro de Reserva", "Index", "Admin")</li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Alquileres<span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color: #e57057 ">
+                                    <li>@Html.ActionLink("Registro de Alquiler", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Registro de Vehiculo", "Index", "Admin")</li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Clientes <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color: #e57057 ">
+                                    @*//<li>@Html.ActionLink("Registro de Clientes", "Index", "Admin")</li>*@
+                                    <li>@Html.ActionLink("Registro de Contrato", "Index", "Admin")</li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Empleados <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color: #e57057 ">
+                                    <li>@Html.ActionLink("Registro de Empleado", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Registro de Administrador", "Index", "Admin")</li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Mantenimientos <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color: #e57057 ">
+                                    <li>@Html.ActionLink("Consulta Cliente", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Consulta Reserva", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Consulta Alquileres", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Consulta Contratos", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Consulta Vehiculos", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Consulta Empleados", "Index", "Admin")</li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Reportes <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color: #e57057 ">
+                                    <li>@Html.ActionLink("Listado Cliente", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Listado Reserva", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Listado Alquileres", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Listado Contratos", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Listado Vehiculos", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Listado Empleados", "Index", "Admin")</li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Acerca De <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color: #e57057 ">
+                                    <li>@Html.ActionLink("Version App", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Autores App", "Index", "Admin")</li>
+                                </ul>
+                            </li>
+
+                        }
+                        if (rolUsuario.Equals("empleado", StringComparison.OrdinalIgnoreCase))
+                        {
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Mantenimientos <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color: #e57057 ">
+                                    <li>@Html.ActionLink("Consulta Cliente", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Consulta Reserva", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Consulta Alquileres", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Consulta Contratos", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Consulta Vehiculos", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Consulta Empleados", "Index", "Empleado")</li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Reportes <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color: #e57057 ">
+                                    <li>@Html.ActionLink("Listado Cliente", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Listado Reserva", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Listado Alquileres", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Listado Contratos", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Listado Vehiculos", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Listado Empleados", "Index", "Empleado")</li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Acerca De <span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="background-color: #e57057 ">
+                                    <li>@Html.ActionLink("Version App", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Autores App", "Index", "Empleado")</li>
+                                </ul>
+                            </li>
+                        }
+
+                    }
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    @if (!usuarioAutenticado)
+                    {
+                        <li>@Html.ActionLink("Registrarse", "Registro", "Login", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        <li>@Html.ActionLink("Iniciar sesión", "Login", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                    }
+                    else
+                    {
+
+
+
+                        if (rolUsuario.Equals("cliente", StringComparison.OrdinalIgnoreCase))
+                        {
+                            <li style="color:whitesmoke; font-size:15px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-top:14px;">Bienvenido Usuario: @nombreUsuario! &nbsp;</li>
+
+                        }
+                        if (rolUsuario.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                        {
+                <li style="color:whitesmoke; font-size:15px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-top:14px;">Bienvenido Admin: @nombreUsuario &nbsp;</li>
+                        }
+                        if (rolUsuario.Equals("empleado", StringComparison.OrdinalIgnoreCase))
+                        {
+                <li style="color:whitesmoke; font-size:15px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-top:14px;"> Bienvenido Empleado: @nombreUsuario &nbsp;</li>
+                        }
+                        <li>@Html.ActionLink("Cerrar sesión", "CerrarSesion", "Login")</li>
+                    }
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+    <footer class="fotter">
+
+        <div class="container">
+
+            <div class="row">
+                <br />
+                <div class="col-sm-4">
+
+                </div>
+
+                <div class="col-sm-4">
+                    <img src="~/Content/Img/YALEX-CAR-RENTAL.png" alt="Logo" class="center-image" width="300" height="150" />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-primary">
+                        <span class=""></span> Facebook
+                    </button>
+                    &nbsp;
+                    <button type="button" class="btn btn-danger">
+                        <span class=""></span> Instagram
+                    </button>
+                    &nbsp; &nbsp;
+                    <br />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-secondary">
+                        <span class=""></span> TikTok
+                    </button>
+                    &nbsp;
+                    <button type="button" class="btn btn-success">
+                        <span class=""></span> Whatsapp
+                    </button>
+                    <br />
+                    <br />
+                    <h4>&copy;2023 Yalex. Derechos reservados.</h4>
+                </div>
+                <br />
+
+
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

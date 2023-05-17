@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Registro";
+}
+
+<link rel="stylesheet" href="~/Content/Css/style.css">
+<body class="cuerpo">
+    <br />
+
+    <div class="singin-box">
+        <img src="~/Content/img/YALEX-CAR-RENTA.png" class="avatar" alt="Avatar Image" />
+        <h1>Registrarse</h1>
+        <form action="@Url.Action("Registro","Login")" method=post>
+
+            @if (ViewData["Mensaje"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewData["Mensaje"]
+                </div>
+
+            }
+            <label for="employeename">Name</label>
+            <input type="text" name="nombres" placeholder="Enter Names" required="">
+
+            <label for="username">Last Name</label>
+            <input type="text" name="apellidos" placeholder="Enter Last Names" required="">
+
+            <label for="username">Mail</label>
+            <input type="text" name="correo" placeholder="Enter Mail" required="">
+
+            <label for="password">Password</label>
+            <input type="password" name="contrasena" placeholder="Enter Password" required="">
+
+            <label for="password">Confirm Password</label>
+            <input type="password" name="ConfirmarContra" placeholder="Enter Confirm Password" required="">
+
+            <label for="address">Address</label>
+            <input type="text" name="direccion" placeholder="Enter your address" required="">
+
+            <label for="phone">Phone</label>
+            <input type="text" name="telefono" placeholder="Enter Phone Number" required="">
+
+            <label for="license">licencia</label>
+            <input type="text" name="licencia" placeholder="Enter license" required="">
+
+            <label for="dui">Dui</label>
+            <input type="text" name="dui" placeholder="Enter Dui or Passaport" required="">
+            <!--Codigo C#  Si ya tiene contenido el view data muestre el mensaje -->
+
+
+
+
+            <input type="submit" value="Registrarse">
+            Ya tienes una cuenta?
+            <a href="@Url.Action("Login","Login")">Inicia Sesión</a>
+        </form>
+    </div>
+    <div class="image-container">
+        <img src="~/Content/Img/nissan.png" alt="Carro">
+    </div>
+    <br />
+    <br />
+</body>
+
+
+
