@@ -1,0 +1,130 @@
+﻿@model WebYalex.Models.vehiculo
+
+@{
+    ViewBag.Title = "Details";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <style>
+        body {
+            background-image: url('https://www.infobae.com/new-resizer/ru9QuWwsGpwX0yaRMC7ggChV5xw=/1024x512/filters:format(webp):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/3NDORWTMGNG5ZC4OKIBLKKQC2M.jpg');
+            
+            background-size: 100%;
+            background-repeat: no-repeat;
+           
+        }
+
+    </style>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<br />
+<br />
+<h2>CONSULTA</h2>
+
+<div >
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_vehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_vehiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.placa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.placa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_vehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_vehiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_transmision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_transmision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.condicion_vehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.condicion_vehiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.capacidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capacidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consumo_combus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumo_combus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio_dia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio_dia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Regresar", "Index", "", new { @class = "btn btn-primary" })
+</p>
+</p>

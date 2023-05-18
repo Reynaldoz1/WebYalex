@@ -1,0 +1,117 @@
+﻿@model IEnumerable<WebYalex.Models.vehiculo>
+
+@{
+    ViewBag.Title = "Consulta";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <style>
+        body {
+            background-image: url('https://scontent.fsal11-1.fna.fbcdn.net/v/t39.30808-6/290175692_1637966839911555_8548824775972466254_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a26aad&_nc_ohc=E4wCIWr5zsgAX9rML9W&_nc_ht=scontent.fsal11-1.fna&oh=00_AfDHeYNW5wT5Qu8wqjyUwb4kHaz29I7khNcOfCO_8tg4pw&oe=646785EA');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<br />
+<br />
+<h2 class="color-letras">Consulta de Registros</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Registro", "Create", "", new { @class = "btn btn-success" })
+</p>
+
+<table class="transparent-table">
+    <tr />
+    <tr>
+
+        <th class="transparent-form form-group">
+            @Html.DisplayNameFor(model => model.id_vehiculo)
+        </th>
+        <th class="transparent-form form-group">
+            @Html.DisplayNameFor(model => model.placa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_vehiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_transmision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.condicion_vehiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.capacidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.consumo_combus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio_dia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_vehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.placa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_vehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_transmision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.condicion_vehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.capacidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.consumo_combus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio_dia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id_vehiculo }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.id_vehiculo }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_vehiculo }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

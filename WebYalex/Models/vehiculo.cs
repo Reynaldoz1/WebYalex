@@ -11,7 +11,8 @@ namespace WebYalex.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class vehiculo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,20 +23,31 @@ namespace WebYalex.Models
             this.entrega = new HashSet<entrega>();
             this.reserva = new HashSet<reserva>();
         }
-    
+        [Display(Name = "#")]
         public int id_vehiculo { get; set; }
+        [Display(Name = "Placa")]
         public string placa { get; set; }
+        [Display(Name = "Marca")]
         public string marca { get; set; }
+        [Display(Name = "Tipo Vehiculo")]
         public string tipo_vehiculo { get; set; }
+        [Display(Name = "Tipo Transmision")]
         public string tipo_transmision { get; set; }
+        [Display(Name = "Categoria")]
         public string categoria { get; set; }
+        [Display(Name = "Condicion")]
         public string condicion_vehiculo { get; set; }
+        [Display(Name = "Capacidad")]
         public string capacidad { get; set; }
+        [Display(Name = "Combustible")]
         public string consumo_combus { get; set; }
+        [Display(Name = "Precio por dia")]
         public decimal precio_dia { get; set; }
+        [Display(Name = "Año")]
         public string anio { get; set; }
+        [Display(Name = "Estado")]
         public string estado { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<alquileres> alquileres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

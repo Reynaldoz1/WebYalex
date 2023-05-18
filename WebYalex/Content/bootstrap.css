@@ -27,6 +27,55 @@ section,
 summary {
   display: block;
 }
+
+.color-letras {
+    color: white;
+}
+
+
+.transparent-table {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-collapse: collapse;
+    width: 80%;
+    left: 10%;
+    position: absolute;
+}
+
+.transparent-table th {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.transparent-table td {
+   border: 1px solid white;
+   padding: 5px;
+}
+
+.transparent-form {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+}
+
+.transparent-form .form-group {
+    margin-bottom: 15px;
+}
+
+.transparent-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.transparent-form input,
+.transparent-form select {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    padding: 5px;
+    width: 100%;
+ }
+
+
 audio,
 canvas,
 progress,
@@ -184,8 +233,9 @@ optgroup {
   font-weight: bold;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 td,
 th {
@@ -1452,18 +1502,23 @@ dd {
   margin-left: 0;
 }
 @media (min-width: 768px) {
-  .dl-horizontal dt {
-    float: left;
-    width: 160px;
-    clear: left;
-    text-align: right;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .dl-horizontal dd {
-    margin-left: 180px;
-  }
+    .dl-horizontal dt {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        float: left;
+        width: 160px;
+        clear: left;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .dl-horizontal dd {
+        margin-left: 180px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+    }
 }
 abbr[title],
 abbr[data-original-title] {
@@ -1617,7 +1672,12 @@ pre code {
 
 .fotter {
     background-image: linear-gradient(90deg, #e48258 0, #e57757 16.67%, #e46a57 33.33%, #e25d58 50%, #df4f5a 66.67%, #dc415e 83.33%, #d83263 100%);
-
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 17%;
+    text-align: center;
 }
 @media (min-width: 768px) {
   .container {
