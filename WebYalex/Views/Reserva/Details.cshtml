@@ -1,0 +1,74 @@
+﻿@model WebYalex.Models.reserva
+
+@{
+    ViewBag.Title = "Detalle Reserva";
+}
+
+<h2>Detalle Reserva</h2>
+
+<div>
+    <h4>reserva</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_reserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_reserva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_vehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_vehiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costoestimado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costoestimado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_reserva }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -7,9 +7,13 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", "", new {@class="btn btn-success"})
+    @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-success" })
 </p>
-<table class="table table-striped">
+<div>
+    @Html.Label("Buscar:")
+    @Html.TextBox("searchString", null, new { id = "searchStringInput", @class = "form-control" })
+</div>
+<table id="tablaContratos" class="table table-striped">
     <thead class="table-active">
         <tr>
             <th>
@@ -59,67 +63,94 @@
         </tr>
     </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_contrato)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_cliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_alquiler)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_vehiculo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dias)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.correo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.referencia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.num_referencia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tipo_pago)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.precio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.total_renta)
-        </td>
-        
-        <td>
-            <div class="action-buttons">
-                
-               @Html.ActionLink("Editar", "Edit", new { id = item.id_contrato }, new { @class = "btn btn-warning" })
-                <span class="bi bi-info-circle-fill"></span>
-            </div>   
-        </td>
-        <td>
-            <div class="action-buttons">
-                @Html.ActionLink("Detalles", "Details", new { id = item.id_contrato }, new { @class = "btn btn-primary" })             
-             </div>   
-        </td>
-        <td>
-            <div class="action-buttons">
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_contrato }, new { @class = "btn btn-danger" })
-             </div>   
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_contrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_alquiler)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_vehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.referencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_referencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_pago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_renta)
+            </td>
+
+            <td>
+                <div class="action-buttons">
+
+                    @Html.ActionLink("Editar", "Edit", new { id = item.id_contrato }, new { @class = "btn btn-warning" })
+                    <span class="bi bi-info-circle-fill"></span>
+                </div>
+            </td>
+            <td>
+                <div class="action-buttons">
+                    @Html.ActionLink("Detalles", "Details", new { id = item.id_contrato }, new { @class = "btn btn-primary" })
+                </div>
+            </td>
+            <td>
+                <div class="action-buttons">
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id_contrato }, new { @class = "btn btn-danger" })
+                </div>
+            </td>
+        </tr>
+    }
 
 </table>
+
+@section scripts {
+    <script>
+        $(function () {
+            // Capturar cambios en el textbox
+            $('#searchStringInput').on('input', function () {
+                var searchString = $(this).val().trim().toLowerCase();
+                filterTable(searchString);
+            });
+
+ 
+
+            // Función para filtrar la tabla
+            function filterTable(searchString) {
+                $('#tablaContratos tbody tr').each(function () {
+                    var rowText = $(this).text().trim().toLowerCase();
+                    if (rowText.includes(searchString)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+        });
+    </script>
+}
 

@@ -181,10 +181,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\DbContextLocal.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AlquilerController.cs" />
     <Compile Include="Controllers\ContratosController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\EntregaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ReservaController.cs" />
     <Compile Include="Controllers\VehiculoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -243,6 +246,14 @@
     <Content Include="Content\Css\login.css" />
     <Content Include="Content\Css\registro.css" />
     <Content Include="Content\Css\style.css" />
+    <Content Include="Content\dist\bootstrap-clockpicker.css" />
+    <Content Include="Content\dist\bootstrap-clockpicker.js" />
+    <Content Include="Content\dist\bootstrap-clockpicker.min.css" />
+    <Content Include="Content\dist\bootstrap-clockpicker.min.js" />
+    <Content Include="Content\dist\jquery-clockpicker.css" />
+    <Content Include="Content\dist\jquery-clockpicker.js" />
+    <Content Include="Content\dist\jquery-clockpicker.min.css" />
+    <Content Include="Content\dist\jquery-clockpicker.min.js" />
     <Content Include="Content\Img\accent.png" />
     <Content Include="Content\Img\aeropuerto.png" />
     <Content Include="Content\Img\carrofondo.png" />
@@ -325,6 +336,21 @@
     <Content Include="Views\Vehiculo\Edit.cshtml" />
     <Content Include="Views\Vehiculo\Delete.cshtml" />
     <Content Include="Views\Empleado\Vehiculo.cshtml" />
+    <Content Include="Views\Alquiler\Index.cshtml" />
+    <Content Include="Views\Alquiler\Details.cshtml" />
+    <Content Include="Views\Alquiler\Create.cshtml" />
+    <Content Include="Views\Alquiler\Edit.cshtml" />
+    <Content Include="Views\Alquiler\Delete.cshtml" />
+    <Content Include="Views\Reserva\Index.cshtml" />
+    <Content Include="Views\Reserva\Details.cshtml" />
+    <Content Include="Views\Reserva\Create.cshtml" />
+    <Content Include="Views\Reserva\Edit.cshtml" />
+    <Content Include="Views\Reserva\Delete.cshtml" />
+    <Content Include="Views\Entrega\Index.cshtml" />
+    <Content Include="Views\Entrega\Details.cshtml" />
+    <Content Include="Views\Entrega\Create.cshtml" />
+    <Content Include="Views\Entrega\Edit.cshtml" />
+    <Content Include="Views\Entrega\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

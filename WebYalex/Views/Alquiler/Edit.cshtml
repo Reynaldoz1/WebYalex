@@ -1,0 +1,88 @@
+﻿@model WebYalex.Models.alquileres
+
+@{
+    ViewBag.Title = "Editar Alquiler";
+}
+
+<h2>Editar Alquiler</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>alquileres</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.id_alquiler, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.id_alquiler, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.id_alquiler, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.id_cliente, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.id_cliente, (IEnumerable<SelectListItem>)ViewBag.ListaClientes, "-- Seleccione un cliente --", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.id_cliente, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.costoalquiler, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.costoalquiler, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.costoalquiler, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.estado, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.id_vehiculo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.id_vehiculo, (IEnumerable<SelectListItem>)ViewBag.listaVehiculos, "-- Seleccione un Vehiculo --", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.id_vehiculo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.inicio_alquiler, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="date" class="form-control" id="inicio_alquiler" name="inicio_alquiler" pattern="\d{2}/\d{2}/\d{4}" required />
+            @Html.ValidationMessageFor(model => model.inicio_alquiler, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.finalizacion_alquiler, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="date" class="form-control" id="finalizacion_alquiler" name="finalizacion_alquiler" pattern="\d{2}/\d{2}/\d{4}" required />
+            @Html.ValidationMessageFor(model => model.finalizacion_alquiler, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

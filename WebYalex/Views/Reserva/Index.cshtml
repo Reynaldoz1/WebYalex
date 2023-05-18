@@ -1,0 +1,110 @@
+﻿@model IEnumerable<WebYalex.Models.reserva>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nueva Reserva", "Create", "", new { @class = "btn btn-success" })
+</p>
+<div>
+    @Html.Label("Buscar:")
+    @Html.TextBox("searchString", null, new { id = "searchStringInput", @class = "form-control" })
+</div>
+<table id="tablaReserva" class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_reserva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_vehiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.costoestimado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_reserva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_vehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costoestimado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_empleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                <div class="action-buttons">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.id_reserva }, new { @class = "btn btn-warning" })
+                </div>
+            </td>
+            <td>
+                <div class="action-buttons">
+                    @Html.ActionLink("Detalles", "Details", new { id = item.id_reserva }, new { @class = "btn btn-primary" })
+                </div>
+            </td>
+            <td>
+                <div class="action-buttons">
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id_reserva }, new { @class = "btn btn-danger" })
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section scripts {
+    <script>
+        $(function () {
+            // Capturar cambios en el textbox
+            $('#searchStringInput').on('input', function () {
+                var searchString = $(this).val().trim().toLowerCase();
+                filterTable(searchString);
+            });
+
+ 
+
+            // Función para filtrar la tabla
+            function filterTable(searchString) {
+                $('#tablaReserva tbody tr').each(function () {
+                    var rowText = $(this).text().trim().toLowerCase();
+                    if (rowText.includes(searchString)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+        });
+    </script>
+}

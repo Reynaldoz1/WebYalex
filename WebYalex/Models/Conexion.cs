@@ -10,7 +10,7 @@ namespace WebYalex.Models
     {
         public static SqlConnection Conectar()
         {
-            SqlConnection cn = new SqlConnection("SERVER=YILBERT;DATABASE=yalexrenta;Integrated security=true");
+            SqlConnection cn = new SqlConnection("SERVER=(local);DATABASE=yalexrentacar;Integrated security=true");
 
             cn.Open();
 
