@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="yalexrentaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="alquileres">
+    <Key>
+      <PropertyRef Name="id_alquiler" />
+    </Key>
+    <Property Name="id_alquiler" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="costoalquiler" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_vehiculo" Type="Int32" Nullable="false" />
+    <Property Name="inicio_alquiler" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="finalizacion_alquiler" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="clientes" Relationship="Self.FK_alquileres_clientes" FromRole="alquileres" ToRole="clientes" />
+    <NavigationProperty Name="vehiculo" Relationship="Self.FK_alquileres_vehiculo" FromRole="alquileres" ToRole="vehiculo" />
+    <NavigationProperty Name="contratos" Relationship="Self.FK_contratos_alquileres" FromRole="alquileres" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="clientes">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="licencia" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dui" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contrasena" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="alquileres" Relationship="Self.FK_alquileres_clientes" FromRole="clientes" ToRole="alquileres" />
+    <NavigationProperty Name="contratos" Relationship="Self.FK_contratos_clientes" FromRole="clientes" ToRole="contratos" />
+    <NavigationProperty Name="entrega" Relationship="Self.FK_entrega_clientes" FromRole="clientes" ToRole="entrega" />
+    <NavigationProperty Name="reserva" Relationship="Self.FK_reserva_clientes" FromRole="clientes" ToRole="reserva" />
+  </EntityType>
+  <EntityType Name="contratos">
+    <Key>
+      <PropertyRef Name="id_contrato" />
+    </Key>
+    <Property Name="id_contrato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="id_alquiler" Type="Int32" Nullable="false" />
+    <Property Name="dias" Type="Int32" Nullable="false" />
+    <Property Name="precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="referencia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="num_referencia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="total_renta" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="id_vehiculo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="alquileres" Relationship="Self.FK_contratos_alquileres" FromRole="contratos" ToRole="alquileres" />
+    <NavigationProperty Name="clientes" Relationship="Self.FK_contratos_clientes" FromRole="contratos" ToRole="clientes" />
+    <NavigationProperty Name="vehiculo" Relationship="Self.FK_contratos_vehiculo" FromRole="contratos" ToRole="vehiculo" />
+    <NavigationProperty Name="entrega" Relationship="Self.FK_entrega_contratos" FromRole="contratos" ToRole="entrega" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="id_empleado" />
+    </Key>
+    <Property Name="id_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contrasena" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="entrega" Relationship="Self.FK_entrega_empleado" FromRole="empleado" ToRole="entrega" />
+    <NavigationProperty Name="reserva" Relationship="Self.FK_reserva_empleado" FromRole="empleado" ToRole="reserva" />
+  </EntityType>
+  <EntityType Name="entrega">
+    <Key>
+      <PropertyRef Name="id_entrega" />
+    </Key>
+    <Property Name="id_entrega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kilometraje" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripestado_entrega" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripestado_devolucion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="imagenestado_entrega" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="imagenestado_devolucion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_entrega" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_devolucion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="id_empleado" Type="Int32" Nullable="false" />
+    <Property Name="id_vehiculo" Type="Int32" Nullable="false" />
+    <Property Name="id_contrato" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="clientes" Relationship="Self.FK_entrega_clientes" FromRole="entrega" ToRole="clientes" />
+    <NavigationProperty Name="contratos" Relationship="Self.FK_entrega_contratos" FromRole="entrega" ToRole="contratos" />
+    <NavigationProperty Name="empleado" Relationship="Self.FK_entrega_empleado" FromRole="entrega" ToRole="empleado" />
+    <NavigationProperty Name="vehiculo" Relationship="Self.FK_entrega_vehiculo" FromRole="entrega" ToRole="vehiculo" />
+  </EntityType>
+  <EntityType Name="reserva">
+    <Key>
+      <PropertyRef Name="id_reserva" />
+    </Key>
+    <Property Name="id_reserva" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="id_vehiculo" Type="Int32" Nullable="false" />
+    <Property Name="costoestimado" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="id_empleado" Type="Int32" Nullable="false" />
+    <Property Name="hora" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="clientes" Relationship="Self.FK_reserva_clientes" FromRole="reserva" ToRole="clientes" />
+    <NavigationProperty Name="empleado" Relationship="Self.FK_reserva_empleado" FromRole="reserva" ToRole="empleado" />
+    <NavigationProperty Name="vehiculo" Relationship="Self.FK_reserva_vehiculo" FromRole="reserva" ToRole="vehiculo" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vehiculo">
+    <Key>
+      <PropertyRef Name="id_vehiculo" />
+    </Key>
+    <Property Name="id_vehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="placa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo_vehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo_transmision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="condicion_vehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="capacidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="consumo_combus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="precio_dia" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="anio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="alquileres" Relationship="Self.FK_alquileres_vehiculo" FromRole="vehiculo" ToRole="alquileres" />
+    <NavigationProperty Name="contratos" Relationship="Self.FK_contratos_vehiculo" FromRole="vehiculo" ToRole="contratos" />
+    <NavigationProperty Name="entrega" Relationship="Self.FK_entrega_vehiculo" FromRole="vehiculo" ToRole="entrega" />
+    <NavigationProperty Name="reserva" Relationship="Self.FK_reserva_vehiculo" FromRole="vehiculo" ToRole="reserva" />
+  </EntityType>
+  <Association Name="FK_alquileres_clientes">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="1" />
+    <End Role="alquileres" Type="Self.alquileres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="alquileres">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_alquileres_vehiculo">
+    <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="1" />
+    <End Role="alquileres" Type="Self.alquileres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehiculo">
+        <PropertyRef Name="id_vehiculo" />
+      </Principal>
+      <Dependent Role="alquileres">
+        <PropertyRef Name="id_vehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contratos_alquileres">
+    <End Role="alquileres" Type="Self.alquileres" Multiplicity="1" />
+    <End Role="contratos" Type="Self.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="alquileres">
+        <PropertyRef Name="id_alquiler" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="id_alquiler" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contratos_clientes">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="1" />
+    <End Role="contratos" Type="Self.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_entrega_clientes">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="1" />
+    <End Role="entrega" Type="Self.entrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="entrega">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reserva_clientes">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="1" />
+    <End Role="reserva" Type="Self.reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="reserva">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contratos_vehiculo">
+    <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="1" />
+    <End Role="contratos" Type="Self.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehiculo">
+        <PropertyRef Name="id_vehiculo" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="id_vehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_entrega_contratos">
+    <End Role="contratos" Type="Self.contratos" Multiplicity="1" />
+    <End Role="entrega" Type="Self.entrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contratos">
+        <PropertyRef Name="id_contrato" />
+      </Principal>
+      <Dependent Role="entrega">
+        <PropertyRef Name="id_contrato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_entrega_empleado">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="1" />
+    <End Role="entrega" Type="Self.entrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="id_empleado" />
+      </Principal>
+      <Dependent Role="entrega">
+        <PropertyRef Name="id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reserva_empleado">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="1" />
+    <End Role="reserva" Type="Self.reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="id_empleado" />
+      </Principal>
+      <Dependent Role="reserva">
+        <PropertyRef Name="id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_entrega_vehiculo">
+    <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="1" />
+    <End Role="entrega" Type="Self.entrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehiculo">
+        <PropertyRef Name="id_vehiculo" />
+      </Principal>
+      <Dependent Role="entrega">
+        <PropertyRef Name="id_vehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reserva_vehiculo">
+    <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="1" />
+    <End Role="reserva" Type="Self.reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehiculo">
+        <PropertyRef Name="id_vehiculo" />
+      </Principal>
+      <Dependent Role="reserva">
+        <PropertyRef Name="id_vehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbModels" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="alquileres" EntityType="Self.alquileres" />
+    <EntitySet Name="clientes" EntityType="Self.clientes" />
+    <EntitySet Name="contratos" EntityType="Self.contratos" />
+    <EntitySet Name="empleado" EntityType="Self.empleado" />
+    <EntitySet Name="entrega" EntityType="Self.entrega" />
+    <EntitySet Name="reserva" EntityType="Self.reserva" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="vehiculo" EntityType="Self.vehiculo" />
+    <AssociationSet Name="FK_alquileres_clientes" Association="Self.FK_alquileres_clientes">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="alquileres" EntitySet="alquileres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_alquileres_vehiculo" Association="Self.FK_alquileres_vehiculo">
+      <End Role="vehiculo" EntitySet="vehiculo" />
+      <End Role="alquileres" EntitySet="alquileres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contratos_alquileres" Association="Self.FK_contratos_alquileres">
+      <End Role="alquileres" EntitySet="alquileres" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contratos_clientes" Association="Self.FK_contratos_clientes">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_entrega_clientes" Association="Self.FK_entrega_clientes">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="entrega" EntitySet="entrega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reserva_clientes" Association="Self.FK_reserva_clientes">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="reserva" EntitySet="reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contratos_vehiculo" Association="Self.FK_contratos_vehiculo">
+      <End Role="vehiculo" EntitySet="vehiculo" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_entrega_contratos" Association="Self.FK_entrega_contratos">
+      <End Role="contratos" EntitySet="contratos" />
+      <End Role="entrega" EntitySet="entrega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_entrega_empleado" Association="Self.FK_entrega_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="entrega" EntitySet="entrega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reserva_empleado" Association="Self.FK_reserva_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="reserva" EntitySet="reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_entrega_vehiculo" Association="Self.FK_entrega_vehiculo">
+      <End Role="vehiculo" EntitySet="vehiculo" />
+      <End Role="entrega" EntitySet="entrega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reserva_vehiculo" Association="Self.FK_reserva_vehiculo">
+      <End Role="vehiculo" EntitySet="vehiculo" />
+      <End Role="reserva" EntitySet="reserva" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

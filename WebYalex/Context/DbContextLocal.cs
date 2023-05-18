@@ -18,6 +18,5 @@ namespace WebYalex.DataBase
     {
         public DbContextLocal() : base(@"Data Source=.\SQLEXPRESS;Initial Catalog=WebYalex; Integrated Security = true;") { }
 
-        public DbSet<Forum> Forum { get; set; }
     }
 }

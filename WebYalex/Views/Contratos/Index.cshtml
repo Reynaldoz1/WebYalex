@@ -1,0 +1,125 @@
+﻿@model IEnumerable<WebYalex.Models.contratos>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "", new {@class="btn btn-success"})
+</p>
+<table class="table table-striped">
+    <thead class="table-active">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id_contrato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_alquiler)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_vehiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.referencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.num_referencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo_pago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_renta)
+            </th>
+
+            <th>Editar</th>
+            <th>Detalles</th>
+            <th>Eliminar</th>
+
+        </tr>
+    </thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_contrato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_alquiler)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_vehiculo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.referencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.num_referencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_pago)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_renta)
+        </td>
+        
+        <td>
+            <div class="action-buttons">
+                
+               @Html.ActionLink("Editar", "Edit", new { id = item.id_contrato }, new { @class = "btn btn-warning" })
+                <span class="bi bi-info-circle-fill"></span>
+            </div>   
+        </td>
+        <td>
+            <div class="action-buttons">
+                @Html.ActionLink("Detalles", "Details", new { id = item.id_contrato }, new { @class = "btn btn-primary" })             
+             </div>   
+        </td>
+        <td>
+            <div class="action-buttons">
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_contrato }, new { @class = "btn btn-danger" })
+             </div>   
+        </td>
+    </tr>
+}
+
+</table>
+
