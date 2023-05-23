@@ -3,8 +3,8 @@
     "",
     "\\WebYalex",
     "\\WebYalex\\Views",
-    "\\WebYalex\\Views\\ClienteAdmin"
+    "\\WebYalex\\Views\\EmpleadoEmple"
   ],
-  "SelectedNode": "\\WebYalex\\Views\\ClienteAdmin\\Index.cshtml",
+  "SelectedNode": "\\WebYalex\\Views\\EmpleadoEmple\\Create.cshtml",
   "PreviewInSolutionExplorer": false
 }
