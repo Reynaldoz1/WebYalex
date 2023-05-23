@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WebYalex",
+    "\\WebYalex\\Views",
+    "\\WebYalex\\Views\\ClienteAdmin"
   ],
-  "SelectedNode": "\\WebYalex.sln",
+  "SelectedNode": "\\WebYalex\\Views\\ClienteAdmin\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

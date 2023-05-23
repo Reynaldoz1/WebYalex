@@ -182,8 +182,14 @@
     <Compile Include="Context\DbContextLocal.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AlquilerController.cs" />
+    <Compile Include="Controllers\ClienteAdminController.cs" />
+    <Compile Include="Controllers\ClienteCreateController.cs" />
+    <Compile Include="Controllers\ClienteEmpleController.cs" />
     <Compile Include="Controllers\ContratosController.cs" />
+    <Compile Include="Controllers\EmpleadoAdminController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\EmpleadoCreateController.cs" />
+    <Compile Include="Controllers\EmpleadoEmpleController.cs" />
     <Compile Include="Controllers\EntregaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -193,15 +199,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\alquileres.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbYalex.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Autenticado.cs" />
     <Compile Include="Models\clientes.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbYalex.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\contratos.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbYalex.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DbModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -218,21 +224,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DbModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DbYalex.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbYalex.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbYalex.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbYalex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbYalex.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbYalex.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\empleado.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbYalex.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\entrega.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbYalex.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\reserva.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbYalex.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\vehiculo.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>DbYalex.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -283,6 +304,16 @@
       <DependentUpon>DbModel.edmx</DependentUpon>
       <LastGenOutput>DbModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\DbYalex.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbYalex.edmx</DependentUpon>
+      <LastGenOutput>DbYalex.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DbYalex.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbYalex.edmx</DependentUpon>
+      <LastGenOutput>DbYalex.cs</LastGenOutput>
+    </Content>
     <Content Include="readme.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -292,6 +323,13 @@
     </EntityDeploy>
     <Content Include="Models\DbModel.edmx.diagram">
       <DependentUpon>DbModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\DbYalex.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbYalex.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DbYalex.edmx.diagram">
+      <DependentUpon>DbYalex.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -351,6 +389,24 @@
     <Content Include="Views\Entrega\Create.cshtml" />
     <Content Include="Views\Entrega\Edit.cshtml" />
     <Content Include="Views\Entrega\Delete.cshtml" />
+    <Content Include="Views\ClienteAdmin\Index.cshtml" />
+    <Content Include="Views\ClienteAdmin\Details.cshtml" />
+    <Content Include="Views\ClienteAdmin\Create.cshtml" />
+    <Content Include="Views\ClienteAdmin\Edit.cshtml" />
+    <Content Include="Views\ClienteAdmin\Delete.cshtml" />
+    <Content Include="Views\EmpleadoAdmin\Index.cshtml" />
+    <Content Include="Views\EmpleadoAdmin\Details.cshtml" />
+    <Content Include="Views\EmpleadoAdmin\Create.cshtml" />
+    <Content Include="Views\EmpleadoAdmin\Edit.cshtml" />
+    <Content Include="Views\EmpleadoAdmin\Delete.cshtml" />
+    <Content Include="Views\ClienteEmple\Index.cshtml" />
+    <Content Include="Views\ClienteEmple\Create.cshtml" />
+    <Content Include="Views\EmpleadoEmple\Index.cshtml" />
+    <Content Include="Views\EmpleadoEmple\Create.cshtml" />
+    <Content Include="Views\EmpleadoCreate\Index.cshtml" />
+    <Content Include="Views\EmpleadoCreate\Create.cshtml" />
+    <Content Include="Views\ClienteCreate\Index.cshtml" />
+    <Content Include="Views\ClienteCreate\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

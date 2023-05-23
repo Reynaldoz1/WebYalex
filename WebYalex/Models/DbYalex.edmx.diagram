@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2737ab780a7148cb91a9bec76a105ce4" Name="Diagram1">
+        <EntityTypeShape EntityType="yalexrentaModelo1.alquileres" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="yalexrentaModelo1.clientes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yalexrentaModelo1.contratos" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="yalexrentaModelo1.empleado" Width="1.5" PointX="8.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="yalexrentaModelo1.entrega" Width="1.5" PointX="10.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="yalexrentaModelo1.reserva" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="yalexrentaModelo1.vehiculo" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_alquileres_clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_alquileres_vehiculo" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_contratos_alquileres" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_contratos_clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_entrega_clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_reserva_clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_contratos_vehiculo" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_entrega_contratos" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_entrega_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_reserva_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_entrega_vehiculo" ManuallyRouted="false" />
+        <AssociationConnector Association="yalexrentaModelo1.FK_reserva_vehiculo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

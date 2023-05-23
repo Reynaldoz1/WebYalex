@@ -79,22 +79,22 @@
                             </li>
 
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Empleados <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Registros <span class="caret"></span></a>
                                 <ul class="dropdown-menu" style="background-color: #e57057 ">
-                                    <li>@Html.ActionLink("Registro de Empleado", "Index", "Admin")</li>
-                                    <li>@Html.ActionLink("Registro de Administrador", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Registro de Empleado y Admin", "Index", "EmpleadoCreate")</li>
+                                    <li>@Html.ActionLink("Registro de Cliente", "Index", "ClienteCreate")</li>
                                 </ul>
                             </li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Mantenimientos <span class="caret"></span></a>
                                 <ul class="dropdown-menu" style="background-color: #e57057 ">
-                                    <li>@Html.ActionLink("Consulta Cliente", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Consulta Cliente", "Index", "ClienteAdmin")</li>
                                     <li>@Html.ActionLink("Consulta Reserva", "Index", "Reserva")</li>
                                     <li>@Html.ActionLink("Consulta Alquileres", "Index", "Alquiler")</li>
                                     <li>@Html.ActionLink("Consulta Contratos", "Index", "Contratos")</li>
                                     <li>@Html.ActionLink("Consulta Vehiculos", "Index", "Vehiculo")</li>
-                                    <li>@Html.ActionLink("Consulta Empleados", "Index", "Admin")</li>
+                                    <li>@Html.ActionLink("Consulta Empleados", "Index", "EmpleadoAdmin")</li>
                                     <li>@Html.ActionLink("Consulta Entregas", "Index", "Entrega")</li>
                                 </ul>
                             </li>
@@ -126,12 +126,12 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" style="background-color: transparent " data-toggle="dropdown">Mantenimientos <span class="caret"></span></a>
                                 <ul class="dropdown-menu" style="background-color: #e57057 ">
-                                    <li>@Html.ActionLink("Consulta Cliente", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Consulta Cliente", "Index", "ClienteEmple")</li>
                                     <li>@Html.ActionLink("Consulta Reserva", "Index", "Empleado")</li>
                                     <li>@Html.ActionLink("Consulta Alquileres", "Index", "Empleado")</li>
                                     <li>@Html.ActionLink("Consulta Contratos", "Index", "Empleado")</li>
                                     <li>@Html.ActionLink("Consulta Vehiculos", "Vehiculo", "Empleado")</li>
-                                    <li>@Html.ActionLink("Consulta Empleados", "Index", "Empleado")</li>
+                                    <li>@Html.ActionLink("Consulta Empleados", "Index", "EmpleadoEmple")</li>
                                 </ul>
                             </li>
 
