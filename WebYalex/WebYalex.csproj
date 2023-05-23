@@ -181,20 +181,24 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\DbContextLocal.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\AlquilerController.cs" />
     <Compile Include="Controllers\ClienteAdminController.cs" />
     <Compile Include="Controllers\ClienteCreateController.cs" />
     <Compile Include="Controllers\ClienteEmpleController.cs" />
+=======
+>>>>>>> 0d7bd59a4ad1429cde3dace50b7d5a68917b8e50
     <Compile Include="Controllers\ContratosController.cs" />
     <Compile Include="Controllers\EmpleadoAdminController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\EmpleadoCreateController.cs" />
     <Compile Include="Controllers\EmpleadoEmpleController.cs" />
     <Compile Include="Controllers\EntregaController.cs" />
+=======
+>>>>>>> 0d7bd59a4ad1429cde3dace50b7d5a68917b8e50
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ReservaController.cs" />
-    <Compile Include="Controllers\VehiculoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -267,14 +271,6 @@
     <Content Include="Content\Css\login.css" />
     <Content Include="Content\Css\registro.css" />
     <Content Include="Content\Css\style.css" />
-    <Content Include="Content\dist\bootstrap-clockpicker.css" />
-    <Content Include="Content\dist\bootstrap-clockpicker.js" />
-    <Content Include="Content\dist\bootstrap-clockpicker.min.css" />
-    <Content Include="Content\dist\bootstrap-clockpicker.min.js" />
-    <Content Include="Content\dist\jquery-clockpicker.css" />
-    <Content Include="Content\dist\jquery-clockpicker.js" />
-    <Content Include="Content\dist\jquery-clockpicker.min.css" />
-    <Content Include="Content\dist\jquery-clockpicker.min.js" />
     <Content Include="Content\Img\accent.png" />
     <Content Include="Content\Img\aeropuerto.png" />
     <Content Include="Content\Img\carrofondo.png" />
@@ -368,6 +364,7 @@
     <Content Include="Views\Contratos\Create.cshtml" />
     <Content Include="Views\Contratos\Edit.cshtml" />
     <Content Include="Views\Contratos\Delete.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Vehiculo\Index.cshtml" />
     <Content Include="Views\Vehiculo\Details.cshtml" />
     <Content Include="Views\Vehiculo\Create.cshtml" />
@@ -407,6 +404,8 @@
     <Content Include="Views\EmpleadoCreate\Create.cshtml" />
     <Content Include="Views\ClienteCreate\Index.cshtml" />
     <Content Include="Views\ClienteCreate\Create.cshtml" />
+=======
+>>>>>>> 0d7bd59a4ad1429cde3dace50b7d5a68917b8e50
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

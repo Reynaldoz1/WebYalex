@@ -119,6 +119,7 @@ C:\Users\50360\source\repos\WebYalex\WebYalex\bin\Microsoft.Owin.Security.Google
 C:\Users\50360\source\repos\WebYalex\WebYalex\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\50360\source\repos\WebYalex\WebYalex\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\50360\source\repos\WebYalex\WebYalex\bin\Microsoft.Owin.Security.Twitter.xml
+<<<<<<< HEAD
 C:\Users\Yilbert\Desktop\WebYalex-main\WebYalex\bin\WebYalex.dll.config
 C:\Users\Yilbert\Desktop\WebYalex-main\WebYalex\bin\WebYalex.dll
 C:\Users\Yilbert\Desktop\WebYalex-main\WebYalex\bin\WebYalex.pdb
@@ -482,3 +483,5 @@ C:\PRUEBA DE VISUAL HACIENDO CRUD YALEX\WebYalex-main\web danir\WebYalex\obj\Deb
 C:\PRUEBA DE VISUAL HACIENDO CRUD YALEX\WebYalex-main\web danir\WebYalex\obj\Debug\WebYalex.csproj.CopyComplete
 C:\PRUEBA DE VISUAL HACIENDO CRUD YALEX\WebYalex-main\web danir\WebYalex\obj\Debug\WebYalex.dll
 C:\PRUEBA DE VISUAL HACIENDO CRUD YALEX\WebYalex-main\web danir\WebYalex\obj\Debug\WebYalex.pdb
+=======
+>>>>>>> 0d7bd59a4ad1429cde3dace50b7d5a68917b8e50

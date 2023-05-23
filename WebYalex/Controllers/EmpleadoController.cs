@@ -15,13 +15,5 @@ namespace WebYalex.Controllers
         {
             return View();
         }
-
-        public ActionResult Vehiculo()
-        {
-            using (DbModels context = new DbModels())
-            {
-                return View(context.vehiculo.ToList());
-            }
-        }
     }
 }
